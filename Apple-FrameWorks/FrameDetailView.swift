@@ -45,7 +45,8 @@ struct FrameDetailView: View {
             
             Spacer()
         }
-        .sheet(isPresented: $isShowingSafariView, content: {
+        //不是用sheet而是用這個的話可以覆蓋整個畫面
+        .fullScreenCover(isPresented: $isShowingSafariView, content: {
             SafariView(url:URL(string:framework.urlString) ?? URL(string:"www.apple.com")!)
         })
     }
